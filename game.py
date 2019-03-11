@@ -13,8 +13,9 @@ class Game:
 		while(nOPlayers != 0):
 			player = Player(startingMonay)
 			self.__players.append(player)
+			nOPlayers = nOPlayers - 1
 
-	def givePlayersCards():
+	def givePlayersCards(self):
 		j = 1
 		while(j<=2):
 			for j in self.__players:
