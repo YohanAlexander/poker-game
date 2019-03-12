@@ -10,4 +10,4 @@ class Cards:
 		return self.__simbol
 	
 	def showCard(self):
-		print(self.__nipe + ":" + self.__simbol + " ")
+		return str(self.__nipe + ":" + str(self.__simbol) + " ")
