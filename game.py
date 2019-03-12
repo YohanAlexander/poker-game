@@ -13,20 +13,20 @@ class Game:
 		while(nOPlayers != 0):
 			player = Player(startingMonay)
 			self.__players.append(player)
-			nOPlayers = nOPlayers - 1
+			nOPlayers -= 1
 
 	def givePlayersCards(self):
 		j = 1
 		while(j<=2):
-			for j in self.__players:
-				j.addToHand(self.__gameDeck.takeCard())
-			j = j+1
+			for i in self.__players:
+				i.addToHand(self.__gameDeck.takeCard())
+			j += 1
 	
 	def Flop(self):
 		k = 1
 		while(k<=3):
 			self.__gameTable.append(self.__gameDeck.takeCard())
-			k = k+1
+			k += 1
 	
 	def Turn(self):
 		self.__gameTable.append(self.__gameDeck.takeCard())
@@ -44,12 +44,10 @@ class Game:
 		print("River: " + self.__gameTable[4].showCard())
 	
 	def showCardsOnTable(self):
-		self.showFlop()
-		self.showTurn()
-		self.showRiver()
+		print("Mesa: " + self.__gameTable[0].showCard() + self.__gameTable[1].showCard() + self.__gameTable[2].showCard() + self.__gameTable[3].showCard() + self.__gameTable[4].showCard())
 	
 	def showCardsOnHand(self):
-		for i in self.__players(self):
+		for i in self.__players:
 			i.showHand()
 	
 	
