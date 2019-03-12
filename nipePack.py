@@ -1,4 +1,6 @@
 from cartas import Cards
+import random
+
 class Deck:
 	def __init__(self):
 		self.__deck = list()
