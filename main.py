@@ -1,8 +1,7 @@
 from game import Game
 
 def main():
-	jogo = Game(3 , 1000)
-	#jogo.showCardsOnHand()
+	jogo = Game(2 , 1000)
 	jogo.givePlayersCards()
 	jogo.showCardsOnHand()
 	jogo.Flop()
@@ -12,6 +11,9 @@ def main():
 	jogo.River()
 	jogo.showRiver()
 	jogo.showCardsOnTable()
+	jogo.showPlayerGame()
+
+	
 
 main()
 	
