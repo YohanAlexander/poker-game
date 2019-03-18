@@ -1,55 +1,85 @@
-from nipePack import Deck
+from deck import Deck
 from player import Player
+from table import Table
+import os
+clear = lambda: os.system('cls')
 
 class Game:
 	def __init__(self, nOPlayers, startingMonay = None):
+		clear()
+		
+		contador = 0
 		self.__players = list()
 		
 		self.__gameDeck = Deck()
 		self.__gameDeck.initDeck()
 		
-		self.__gameTable = list()
+		self.__gameTable = Table()
 		
 		while(nOPlayers != 0):
-			player = Player(startingMonay)
-			self.__players.append(player)
+			contador += 1
+			name = str(input("Player " + str(contador) + " name: "))
+			gplayer = Player(name, startingMonay)
+			self.__players.append(gplayer)
 			nOPlayers -= 1
+			clear()
 
 	def givePlayersCards(self):
 		j = 1
 		while(j<=2):
 			for i in self.__players:
-				i.addToHand(self.__gameDeck.takeCard())
+				card = self.__gameDeck.takeCard()
+				i.addToHand(card)
+				i.appendToPlayerTable(card)
 			j += 1
 	
 	def Flop(self):
-		k = 1
-		while(k<=3):
-			self.__gameTable.append(self.__gameDeck.takeCard())
+		k = 0
+		while(k<=2):
+			self.__gameDeck.cutCard()
+			card = self.__gameDeck.takeCard()
+			self.__gameTable.putOnTable(card)
+			for i in self.__players:
+				i.appendToPlayerTable(card)
 			k += 1
 	
 	def Turn(self):
-		self.__gameTable.append(self.__gameDeck.takeCard())
+		self.__gameDeck.cutCard()
+		card = self.__gameDeck.takeCard()
+		self.__gameTable.putOnTable(card)
+		for i in self.__players:
+				i.appendToPlayerTable(card)
 	
 	def River(self):
-		self.__gameTable.append(self.__gameDeck.takeCard())
+		self.__gameDeck.cutCard()
+		card = self.__gameDeck.takeCard()
+		self.__gameTable.putOnTable(card)
+		for i in self.__players:
+				i.appendToPlayerTable(card)
 	
 	def showFlop(self):
-		print("Flop: " + self.__gameTable[0].showCard() + self.__gameTable[1].showCard() + self.__gameTable[2].showCard())
+		self.__gameTable.printFlop()
 	
 	def showTurn(self):
-		print("Turn: " + self.__gameTable[3].showCard())
+		self.__gameTable.printTurn()
 	
 	def showRiver(self):
-		print("River: " + self.__gameTable[4].showCard())
+		self.__gameTable.printRiver()
 	
 	def showCardsOnTable(self):
-		print("Mesa: " + self.__gameTable[0].showCard() + self.__gameTable[1].showCard() + self.__gameTable[2].showCard() + self.__gameTable[3].showCard() + self.__gameTable[4].showCard())
+		self.__gameTable.printAllCardsOnTable()
 	
 	def showCardsOnHand(self):
 		for i in self.__players:
 			i.showHand()
+
+	def showPlayerGame(self):
+		for i in self.__players:
+			print(i.getName() + ", sua mesa é: " + i.showPlayerTable() + "\nVocê compete com: " + i.getBestHandCondition() + "\n" + "Sua mão em jogo é:" + i.showBestHand() + "\n")
+		
 	
+	def getNOPlayers(self):
+		return len(self.__players)
 	
 	
 	
