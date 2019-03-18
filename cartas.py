@@ -1,13 +1,13 @@
 class Cards:
-	def __init__(self, nipe, simbol):
-		self.__nipe = nipe
+	def __init__(self, suit, simbol):
+		self.__suit = suit
 		self.__simbol = simbol
 	
-	def getNipe(self):
-		return self.__nipe
+	def getSuit(self):
+		return self.__suit
 		
 	def getSimbol(self):
 		return self.__simbol
 	
 	def showCard(self):
-		return str(self.__nipe + ":" + str(self.__simbol) + " ")
+		return str(self.__suit + ":" + str(self.__simbol) + " ")
