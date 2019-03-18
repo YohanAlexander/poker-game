@@ -31,3 +31,18 @@ class Deck:
 		card = random.choice(self.__deck)
 		self.__deck.remove(card)
 		return card
+	
+	def cutCard(self):
+		card = random.choice(self.__deck)
+		self.__deck.remove(card)
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
