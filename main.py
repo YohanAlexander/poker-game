@@ -1,5 +1,4 @@
 from game import Game
-#Esse é o main
 
 def main():
 	jogo = Game(2 , 1000)
