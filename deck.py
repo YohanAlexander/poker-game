@@ -6,23 +6,23 @@ class Deck:
 		self.__deck = list()
 	
 	def initDeck(self):
-		i = 1
-		while (i < 13):
+		i = 2
+		while (i <= 13):
 			carta = Cards("Ouros", i)
 			self.__deck.append(carta)
 			i = i+1
-		i = 1
-		while (i < 13):
+		i = 2
+		while (i <= 13):
 			carta = Cards("Copas", i)
 			self.__deck.append(carta)
 			i = i+1
-		i = 1
-		while (i < 13):
+		i = 2
+		while (i <= 13):
 			carta = Cards("Paus", i)
 			self.__deck.append(carta)
 			i = i+1
-		i = 1
-		while (i < 13):
+		i = 2
+		while (i <= 13):
 			carta = Cards("Espadas", i)
 			self.__deck.append(carta)
 			i = i+1

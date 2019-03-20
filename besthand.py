@@ -76,28 +76,28 @@ class BestHand:
 				index += 1
 			if(count == 4):
 				if(self.__result[0] not in self.__par):
-					self.__quadra.append(self.__result[0])
-					self.__quadra.append(self.__result[1])
-					self.__quadra.append(self.__result[2])
 					self.__quadra.append(self.__result[3])
+					self.__quadra.append(self.__result[2])
+					self.__quadra.append(self.__result[1])
+					self.__quadra.append(self.__result[0])
 			elif(count == 3):
 				if(self.__result[0] not in self.__trinca):
-					self.__trinca.append(self.__result[0])
-					self.__trinca.append(self.__result[1])
 					self.__trinca.append(self.__result[2])
+					self.__trinca.append(self.__result[1])
+					self.__trinca.append(self.__result[0])
 			elif(count == 2):
 				if(self.__result[0] not in self.__par):
-					self.__par.append(self.__result[0])
 					self.__par.append(self.__result[1])
+					self.__par.append(self.__result[0])
 	
 	def checkSpecialCases(self):
 		#FULLHOUSE:
 		if(len(self.__par) > 0 and len(self.__trinca) > 0):
-			self.__fullHouse = [self.__par[len(self.__par)-2], self.__par[len(self.__par)-1], self.__trinca[len(self.__trinca)-3], self.__trinca[len(self.__trinca)-2], self.__trinca[len(self.__trinca)-1]]
+			self.__fullHouse = [self.__trinca[len(self.__trinca)-1],self.__trinca[len(self.__trinca)-2] , self.__trinca[len(self.__trinca)-3], self.__par[len(self.__par)-2], self.__par[len(self.__par)-1]]
 		
 		#DOIS PARES:
 		if(len(self.__par) > 2):
-			self.__doisPares = [self.__par[len(self.__par)-4], self.__par[len(self.__par)-3], self.__par[len(self.__par)-2],self.__par[len(self.__par)-1]]
+			self.__doisPares = [self.__par[len(self.__par)-1], self.__par[len(self.__par)-2], self.__par[len(self.__par)-3],self.__par[len(self.__par)-4]]
 		
 		#STRAIGHT FLUSH:
 		if(len(self.__flush) > 0):
@@ -119,23 +119,43 @@ class BestHand:
 	
 	def bestHandCondition(self):
 		if(self.__straightFlush == True):
-			return("Straight Flush! ")
+			return(9)
 		elif(len(self.__quadra) > 0):
-			return("Quadra! ")
+			return(8)
 		elif(len(self.__fullHouse) > 0):
-			return("FullHouse! ")
+			return(7)
 		elif(len(self.__flush) > 0):
-			return("Flush! ")
+			return(6)
 		elif(len(self.__straight) > 0):
-			return("Straight! ")
+			return(5)
 		elif(len(self.__trinca) > 0):
-			return("Trinca! ")
+			return(4)
 		elif(len(self.__doisPares) > 0):
-			return("Dois Pares. ")
+			return(3)
 		elif(len(self.__par) > 0):
-			return("Par. ")
+			return(2)
 		else:
-			return("Carta alta. ")
+			return(1)
+	
+	def bestHandConditionName(self):
+		if(self.__straightFlush == True):
+			return("Straight Flush!")
+		elif(len(self.__quadra) > 0):
+			return("Quadra!")
+		elif(len(self.__fullHouse) > 0):
+			return("Full House!")
+		elif(len(self.__flush) > 0):
+			return("Flush")
+		elif(len(self.__straight) > 0):
+			return("Straight!")
+		elif(len(self.__trinca) > 0):
+			return("Trinca.")
+		elif(len(self.__doisPares) > 0):
+			return("Dois pares.")
+		elif(len(self.__par) > 0):
+			return("Um par.")
+		else:
+			return("Carta alta.")
 	
 	def bestHand(self):
 		if(self.__straightFlush == True):

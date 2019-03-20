@@ -2,19 +2,57 @@ from cartas import Cards
 from besthand import BestHand
 
 class Player(Cards):
-	def __init__(self, playerName, monay = 500):
+	def __init__(self, playerName, monay):
 		self.__playerName = playerName
 		self.__monay = monay
+		self.__monayOnPot = 0
 		self.__hand = list()
 		self.__playerTable = list()
 		self.__winningHandCondition = 0
 		self.__winningHand = 0
+		self.__isBig = False
+		self.__isSmall = False
+	
+	def getName(self):
+		return str(self.__playerName)
+	
+	def getMonay(self):
+		return self.__monay
+	
+	def addMonay(self, value):
+		self.__monay += value
+	
+	def getMonayOnPot(self):
+		return self.__monayOnPot
+	
+	def bet(self, value):
+		if(value <= self.__monay):
+			self.__monay -= value
+			self.__monayOnPot += value
+	
+	def getIsBig(self):
+		return(self.__isBig)
+	
+	def getIsSmall(self):
+		return(self.__isSmall)
+	
+	def switchBig(self):
+		if(self.__isBig == False):
+			self.__isBig = True
+		else:
+			self.__isBig = False
+	
+	def switchSmall(self):
+		if(self.__isSmall == False):
+			self.__isSmall = True
+		else:
+			self.__isSmall = False
 	
 	def showHand(self):
 		if(len(self.__hand) == 2):
-			print(str(self.__playerName) + " : " + self.__hand[0].showCard() + " e " + self.__hand[1].showCard() + "\n")
+			return(self.__hand[0].showCard() + " e " + self.__hand[1].showCard() + "\n")
 		else:
-			print("Nada em mãos.")
+			return("Nada em mãos.")
 	
 	def showPlayerTable(self):
 		self.organizeHand()
@@ -27,14 +65,8 @@ class Player(Cards):
 		elif(len(self.__playerTable) == 2):
 			self.showHand()
 	
-	def getMonay(self):
-		return self.__monay
-	
 	def addToHand(self, card):
 		self.__hand.append(card)
-	
-	def getName(self):
-		return str(self.__playerName)
 	
 	def appendToPlayerTable(self, card):
 		self.__playerTable.append(card)
@@ -44,6 +76,7 @@ class Player(Cards):
 		self.__hand = list()
 		self.__winningHandCondition = 0
 		self.__winningHand = 0
+		self.__monayOnPot = 0
 	
 	def organizeHand(self):
 		while(True):
@@ -63,6 +96,11 @@ class Player(Cards):
 		self.organizeHand()
 		self.__winningHandCondition = BestHand(self.__playerTable)
 		return self.__winningHandCondition.bestHandCondition()
+	
+	def getBestHandConditionName(self):
+		self.organizeHand()
+		self.__winningHandCondition = BestHand(self.__playerTable)
+		return self.__winningHandCondition.bestHandConditionName()
 	
 	def getBestHand(self):
 		self.organizeHand()
