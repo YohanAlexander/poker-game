@@ -1,0 +1,15 @@
+digraph "classes" {
+charset="utf-8"
+rankdir=BT
+"0" [label="{BestHand|\l|bestHand()\lbestHandCondition()\lbestHandConditionName()\lcheckFlush()\lcheckPTQ()\lcheckSpecialCases()\lcheckStraight()\l}", shape="record"];
+"1" [label="{Cards|\l|getSimbol()\lgetSuit()\lshowCard()\l}", shape="record"];
+"2" [label="{Deck|\l|cutCard()\linitDeck()\ltakeCard()\l}", shape="record"];
+"3" [label="{Game|\l|Flop()\lRiver()\lTurn()\laddPlayers()\lcheckWhoWon()\lgetNOPlayers()\lgetWinner()\lgivePlayersCards()\lnewGame()\lresetPlayersOnRound()\lsetDeck()\lshowCardsOnHand()\lshowCardsOnTable()\lshowFlop()\lshowPlayerGame()\lshowRiver()\lshowTurn()\lshowWinner()\lwaitForBets()\l}", shape="record"];
+"4" [label="{Player|\l|addMonay()\laddToHand()\lappendToPlayerTable()\lbet()\lgetBestHand()\lgetBestHandCondition()\lgetBestHandConditionName()\lgetIsBig()\lgetIsSmall()\lgetMonay()\lgetMonayOnPot()\lgetName()\lnewTurn()\lorganizeHand()\lshowBestHand()\lshowHand()\lshowPlayerTable()\lswitchBig()\lswitchSmall()\l}", shape="record"];
+"5" [label="{Table|\l|addToPot()\lgetPot()\lgetTable()\lprintAllCardsOnTable()\lprintFlop()\lprintRiver()\lprintTurn()\lputOnTable()\l}", shape="record"];
+"0" -> "4" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="__winningHandCondition", style="solid"];
+"0" -> "4" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="__winningHandCondition", style="solid"];
+"0" -> "4" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="__winningHand", style="solid"];
+"2" -> "3" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="__gameDeck", style="solid"];
+"5" -> "3" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="__gameTable", style="solid"];
+}

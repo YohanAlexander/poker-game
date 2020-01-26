@@ -1,0 +1,20 @@
+digraph "packages" {
+charset="utf-8"
+rankdir=BT
+"0" [label="__init__", shape="box"];
+"1" [label="besthand", shape="box"];
+"2" [label="cartas", shape="box"];
+"3" [label="deck", shape="box"];
+"4" [label="game", shape="box"];
+"5" [label="main", shape="box"];
+"6" [label="player", shape="box"];
+"7" [label="table", shape="box"];
+"1" -> "2" [arrowhead="open", arrowtail="none"];
+"3" -> "2" [arrowhead="open", arrowtail="none"];
+"4" -> "3" [arrowhead="open", arrowtail="none"];
+"4" -> "6" [arrowhead="open", arrowtail="none"];
+"4" -> "7" [arrowhead="open", arrowtail="none"];
+"5" -> "4" [arrowhead="open", arrowtail="none"];
+"6" -> "1" [arrowhead="open", arrowtail="none"];
+"6" -> "2" [arrowhead="open", arrowtail="none"];
+}
