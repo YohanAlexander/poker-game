@@ -14,7 +14,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Sobre o projeto
 
-O projeto foi desenvolvido para explorar, e criar habilidades técnicas, com o paradigma de orientação a objetos da linguagem de programação Python. A implementação do jogo foi feita com o uso das características que são os alicerces do paradigma:
+O projeto foi desenvolvido para explorar, e criar habilidades técnicas, com o paradigma de orientação a objetos das linguagens de programação. A implementação do jogo foi feita com o uso das características que são os alicerces do paradigma:
 
  1. Abstração
  2. Encapsulamento
@@ -22,6 +22,7 @@ O projeto foi desenvolvido para explorar, e criar habilidades técnicas, com o p
  4. Polimorfismo
 
 Como é possível ver ao visualizar o seu diagrama de classes `UML`.
+
 ![classes](classes.png)
 
 <!-- GETTING STARTED -->
@@ -32,6 +33,7 @@ A versão do interpretador `Python` utilizada no desenvolvimento foi a `3.6`, po
 * Python>=3.6 
 
 Em  sistemas linux utilize a linha de comando:
+
 ```sh
 sudo apt install python3
 ```
@@ -44,6 +46,7 @@ Para iniciar o jogo basta rodar o ponto de entrada do programa:
 python main.py
 ```
 Como é possível visualizar pelo diagrama do pacote, o jogo segue seu fluxo a partir da `main`:
+
 ![packages](packages.png)
 
 O jogo funciona distribuindo as cartas de maneira aleatória utilizando o método `random`.
