@@ -14,20 +14,21 @@
 <!-- ABOUT THE PROJECT -->
 ## Sobre o projeto
 
-O projeto foi desenvolvido para explorar e criar habilidades técnicas com o paradigma de orientação a objetos da linguagem de programação Python. O jogo foi implementação com o uso das características que fundamentam o paradigma:
+O projeto foi desenvolvido para explorar, e criar habilidades técnicas, com o paradigma de orientação a objetos da linguagem de programação Python. A implementação do jogo foi feita com o uso das características que são os alicerces do paradigma:
 
- 1. Encapsulamento
- 2. Herança
- 3. Polimorfismo
+ 1. Abstração
+ 2. Encapsulamento
+ 3. Herança
+ 4. Polimorfismo
 
 Como é possível ver ao visualizar o seu diagrama de classes `UML`.
-![classes](https://github.com/YohanAlexander/poker-game/classes.png)
+![classes](classes.png)
 
 <!-- GETTING STARTED -->
 ## Funcionamento
 
 ### Pré-requisitos
-A versão do interpretador `Python` utilizada no desenvolvimento foi a `3.6`, por isso para o funcionamento adequado é necessária uma distribuição do mesmo, que pode ser gerenciada em ambientes virtuais como o `Anaconda`.
+A versão do interpretador `Python` utilizada no desenvolvimento foi a `3.6`, por isso para o funcionamento adequado é necessária uma distribuição acima desta versão, que pode ser gerenciada em ambientes virtuais como o `Anaconda`.
 * Python>=3.6 
 
 Em  sistemas linux utilize a linha de comando:
@@ -42,8 +43,8 @@ Para iniciar o jogo basta rodar o ponto de entrada do programa:
 ```sh
 python main.py
 ```
-Como é possível visualizar pelo diagrama do pacote:
-![packages](https://github.com/YohanAlexander/poker-game/packages.png)
+Como é possível visualizar pelo diagrama do pacote, o jogo segue seu fluxo a partir da `main`:
+![packages](packages.png)
 
 O jogo funciona distribuindo as cartas de maneira aleatória utilizando o método `random`.
 ```sh
