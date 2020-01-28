@@ -2,10 +2,10 @@
 <br />
 <p align="center">
   <a href="https://github.com/yohanalexander/poker-game">
-    <img src="Baralho/mesa.png" alt="Logo" width="80" height="80">
+    <img src="Baralho/mesa.png" alt="Logo" width="50%" height="50%">
   </a>
 
-  <h3 align="center">Poker Game CLI</h3>
+  <h1 align="center">Poker Game CLI</h1>
 
   <p align="center">
     Um incrível jogo de poker em linha de comando!
@@ -39,7 +39,7 @@ sudo apt install python3
 ```
 
 <!-- USAGE EXAMPLES -->
-### Jogando
+## Jogando
 
 Para iniciar o jogo basta rodar o ponto de entrada do programa:
 ```sh
